@@ -42,8 +42,6 @@ export async function getStaticProps() {
 }
 
 export default function Home({ posts }) {
-  const url = process.env.NEXT_PUBLIC_API_URL;
-  console.log(url);
   return (
     <div className={styles.container}>
       <Head>
