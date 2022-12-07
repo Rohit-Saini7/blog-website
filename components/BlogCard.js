@@ -16,25 +16,25 @@ function BlogPost({ title, author, coverPhoto, datePublished, slug }) {
             sizes='25vw'
           />
         </div>
-      </Link>
-      <div className={styles.text}>
-        <h2 className={styles.cardHeading}>{title}</h2>
-        <div className={styles.details}>
-          <div className={styles.author}>
-            <Image
-              className={styles.authorImg}
-              src={author.avatar.url}
-              alt={author.name}
-              width={48}
-              height={48}
-            />
-            <h3 className={styles.authorName}>{author.name}</h3>
-          </div>
-          <div className={styles.date}>
-            {moment(datePublished).format('MMM DD, YYYY')}
+        <div className={styles.text}>
+          <h2 className={styles.cardHeading}>{title}</h2>
+          <div className={styles.details}>
+            <div className={styles.author}>
+              <Image
+                className={styles.authorImg}
+                src={author.avatar.url}
+                alt={author.name}
+                width={48}
+                height={48}
+              />
+              <h3 className={styles.authorName}>{author.name}</h3>
+            </div>
+            <div className={styles.date}>
+              {moment(datePublished).format('MMM DD, YYYY')}
+            </div>
           </div>
         </div>
-      </div>
+      </Link>
     </div>
   );
 }
