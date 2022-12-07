@@ -67,22 +67,23 @@ export default function BlogPost({ post }) {
         width={100}
         height={100}
       />
-      <div className={styles.title}>
-        <div className={styles.authdetails}>
-          <Image
-            src={post.author.avatar.url}
-            alt={post.author.name}
-            width={100}
-            height={100}
-          />
-          <div className={styles.authtext}>
-            <h6>By {post.author.name} </h6>
-            <h6 className={styles.date}>
-              {moment(post.datePublished).format('MMMM DD, YYYY')}
-            </h6>
+      <div className={styles.text}>
+        <h2 className={styles.postHeading}>{post.title}</h2>
+        <div className={styles.details}>
+          <div className={styles.author}>
+            <Image
+              className={styles.authorImg}
+              src={post.author.avatar.url}
+              alt={post.author.name}
+              width={48}
+              height={48}
+            />
+            <h3>By {post.author.name} </h3>
           </div>
+          <h6 className={styles.date}>
+            {moment(post.datePublished).format('MMMM DD, YYYY')}
+          </h6>
         </div>
-        <h2>{post.title}</h2>
       </div>
 
       <div

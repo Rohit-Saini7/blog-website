@@ -1,14 +1,8 @@
 .card {
-  margin-top: 5rem;
+  margin-top: 2rem;
   border-radius: 2rem;
   overflow: hidden;
   box-shadow: 15px 20px 40px rgba(216, 211, 211, 0.4);
-}
-.card h2 {
-  padding: 0.5rem 0rem;
-}
-.card h3 {
-  font-size: 1rem;
 }
 
 .imgContainer {
@@ -17,14 +11,20 @@
   height: 20vh;
 }
 
-.card img:hover {
-  opacity: 0.8;
-}
-
-.card img {
+.coverPhoto {
   object-fit: cover;
   cursor: pointer;
   transition: all 0.5s ease;
+}
+
+.text {
+  padding: 1rem 2rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardHeading {
+  padding: 0.5rem 0rem;
 }
 
 .details {
@@ -32,23 +32,29 @@
   align-items: center;
   justify-content: space-between;
   margin: 0.5rem 0rem;
-}
-
-.text {
-  padding: 1rem 3rem;
-  justify-content: space-between;
-  align-items: center;
+  color: rgb(101 101 101);
+  font-family: 'Klee One', cursive;
 }
 
 .author {
   display: flex;
   align-items: center;
 }
-.author img {
-  width: 2rem;
-  height: 2rem;
+
+.authorImg {
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   margin-right: 0.5rem;
+  object-fit: cover;
+}
+
+.authorName {
+  font-size: 1rem;
+}
+
+.date {
+  font-size: 0.7rem;
 }
 
 @media screen and (max-width: 768px) {

@@ -2,11 +2,11 @@ import Link from 'next/link';
 
 function Nav() {
   return (
-    <nav>
+    <nav className='navbar'>
       <h1 className='heading'>statistichecrazytime</h1>
-      <div className='navLinks'>
-        <Link href='/'>Home</Link>
-      </div>
+      <Link className='navLink' href='/'>
+        Home
+      </Link>
     </nav>
   );
 }

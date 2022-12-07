@@ -8,23 +8,30 @@ function BlogPost({ title, author, coverPhoto, datePublished, slug }) {
     <div className={styles.card}>
       <Link href={`/posts/${slug}`}>
         <div className={styles.imgContainer}>
-          <Image layout='fill' src={coverPhoto.url} alt='' />
+          <Image
+            className={styles.coverPhoto}
+            src={coverPhoto.url}
+            alt=''
+            fill
+            sizes='25vw'
+          />
         </div>
       </Link>
       <div className={styles.text}>
-        <h2>{title}</h2>
+        <h2 className={styles.cardHeading}>{title}</h2>
         <div className={styles.details}>
           <div className={styles.author}>
             <Image
+              className={styles.authorImg}
               src={author.avatar.url}
               alt={author.name}
-              width={32}
-              height={32}
+              width={48}
+              height={48}
             />
-            <h3>{author.name}</h3>
+            <h3 className={styles.authorName}>{author.name}</h3>
           </div>
           <div className={styles.date}>
-            <h3>{moment(datePublished).format('MMMM DD, YYYY')}</h3>
+            {moment(datePublished).format('MMM DD, YYYY')}
           </div>
         </div>
       </div>
@@ -32,7 +39,4 @@ function BlogPost({ title, author, coverPhoto, datePublished, slug }) {
   );
 }
 
-{
-  /* <div dangerouslySetInnerHTML={{ __html: content.html }}></div> */
-}
 export default BlogPost;
