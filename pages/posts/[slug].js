@@ -3,9 +3,7 @@ import styles from '../../styles/Slug.module.css';
 import moment from 'moment';
 import Image from 'next/image';
 
-const graphcms = new GraphQLClient(
-  'https://ap-south-1.cdn.hygraph.com/content/clbd7img41gnk01rs6a2jgdrz/master'
-);
+const graphcms = new GraphQLClient(process.env.API_URL);
 
 const QUERY = gql`
   query Post($slug: String!) {

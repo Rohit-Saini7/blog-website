@@ -3,9 +3,7 @@ import styles from '../styles/Home.module.css';
 import { GraphQLClient, gql } from 'graphql-request';
 import BlogCard from '../components/BlogCard';
 
-const graphcms = new GraphQLClient(
-  'https://ap-south-1.cdn.hygraph.com/content/clbd7img41gnk01rs6a2jgdrz/master'
-);
+const graphcms = new GraphQLClient(process.env.API_URL);
 
 const QUERY = gql`
   {
@@ -44,6 +42,8 @@ export async function getStaticProps() {
 }
 
 export default function Home({ posts }) {
+  const url = process.env.NEXT_PUBLIC_API_URL;
+  console.log(url);
   return (
     <div className={styles.container}>
       <Head>
