@@ -1,6 +1,7 @@
 import { GraphQLClient, gql } from 'graphql-request';
 import styles from '../../styles/Slug.module.css';
 import moment from 'moment';
+import Image from 'next/image';
 
 const graphcms = new GraphQLClient(
   'https://ap-south-1.cdn.hygraph.com/content/clbd7img41gnk01rs6a2jgdrz/master'
@@ -61,18 +62,25 @@ export async function getStaticProps({ params }) {
 export default function BlogPost({ post }) {
   return (
     <main className={styles.blog}>
-      <img
+      <Image
         className={styles.cover}
         src={post.coverPhoto.url}
         alt={post.title}
+        width={100}
+        height={100}
       />
       <div className={styles.title}>
         <div className={styles.authdetails}>
-          <img src={post.author.avatar.url} alt={post.author.name} />
+          <Image
+            src={post.author.avatar.url}
+            alt={post.author.name}
+            width={100}
+            height={100}
+          />
           <div className={styles.authtext}>
             <h6>By {post.author.name} </h6>
             <h6 className={styles.date}>
-              {moment(post.datePublished).format('MMMM d, YYYY')}
+              {moment(post.datePublished).format('MMMM DD, YYYY')}
             </h6>
           </div>
         </div>
